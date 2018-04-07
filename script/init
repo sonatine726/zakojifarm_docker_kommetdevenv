@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker-compose run --rm rails rails new . --force --database=postgresql --skip-bundle --skip-test
+cp -f database.yml config/database.yml
+docker-compose run --rm rails bundle exec spring binstub --all
