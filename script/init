@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -eu
 
-cp -f Gemfile app/Gemfile
+mkdir rails
+cp -f Gemfile rails/Gemfile
 docker-compose run --rm rails rails new . --force --database=postgresql --skip-bundle --skip-test --skip-turbolinks
-cp -f database.yml app/config/database.yml
+cp -f database.yml rails/config/database.yml
 docker-compose run --rm rails bundle exec spring binstub --all

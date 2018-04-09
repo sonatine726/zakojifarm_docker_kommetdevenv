@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -eu
 
 docker-compose run --rm spring rails db:create
 docker-compose run --rm spring rails db:migrate
