@@ -4,6 +4,7 @@ ENV LANG C.UTF-8
 
 RUN apt-get update -qq && \
  apt-get install -y --no-install-recommends \
+  nodejs \
   build-essential \
   libpq-dev \
   libfontconfig1 && \
@@ -22,7 +23,7 @@ ENV DOCKERIZE_VERSION v0.6.0
 
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
   && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-  && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+  && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 ENV APP_ROOT /app
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eu
+$ErrorActionPreference = "Stop"
 
 docker-compose run --rm spring rails db:create
 docker-compose run --rm spring rails db:migrate
