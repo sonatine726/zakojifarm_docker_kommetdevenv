@@ -10,6 +10,9 @@ RUN apt-get update -qq && \
   libfontconfig1 && \
   rm -rf /var/lib/apt/lists/*
 
+# Make node command which is symbolic likn to nodejs.
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+
 ENV ENTRYKIT_VERSION 0.4.0
 
 RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERSION}/entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz \
